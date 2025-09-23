@@ -18,7 +18,7 @@ const Projects = () => {
 
   // Teasers section - 11 videos for quick previews
   const teasers = [
-    { videoId: 'dQw4w9WgXcQ' },
+    { videoId: '2qFnRXpSFn8' },
     { videoId: 'jNQXAC9IVRw' },
     { videoId: 'M7lc1UVf-VE' },
     { videoId: 'ZZ5LpwO-An4' },
