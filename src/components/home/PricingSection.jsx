@@ -132,7 +132,7 @@ const PricingSection = () => {
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#D3FD50] to-[#b8e03e] text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-[font2] uppercase tracking-wide glow-accent shadow-lg shadow-[#D3FD50]/30 animate-pulse'>
+                <div className='absolute -top-6 sm:-top-7 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#D3FD50]/90 to-[#b8e03e]/90 backdrop-blur-sm text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-[font2] uppercase tracking-wider glow-accent shadow-md shadow-[#D3FD50]/40 transition-all duration-500 ease-out hover:shadow-lg hover:shadow-[#D3FD50]/60 hover:scale-105 border border-[#D3FD50]/20'>
                   Most Popular
                 </div>
               )}
