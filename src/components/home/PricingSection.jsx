@@ -120,38 +120,44 @@ const PricingSection = () => {
           {pricingPlans.map((plan, index) => (
             <div 
               key={index}
-              className={`pricing-card group floating-panel-dark glass-hover glass-click gpu-accelerated relative ${
-                plan.popular ? 'border-2 border-[#D3FD50] glow-accent' : ''
+              className={`pricing-card group floating-panel-dark glass-hover glass-click gpu-accelerated relative transition-all duration-500 ease-out h-full flex flex-col ${
+                plan.popular ? 'border-2 border-[#D3FD50] glow-accent scale-105 lg:scale-110' : 'hover:scale-105'
               }`}
+              style={{
+                paddingTop: plan.popular ? '3rem' : '2rem',
+                paddingBottom: '2rem',
+                paddingLeft: '1.5rem',
+                paddingRight: '1.5rem'
+              }}
             >
               {/* Popular Badge */}
               {plan.popular && (
-                <div className='absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#D3FD50] to-[#b8e03e] text-black px-4 sm:px-6 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-[font2] uppercase tracking-wide glow-accent'>
+                <div className='absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-[#D3FD50] to-[#b8e03e] text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-[font2] uppercase tracking-wide glow-accent shadow-lg shadow-[#D3FD50]/30 animate-pulse'>
                   Most Popular
                 </div>
               )}
               
               {/* Plan Header */}
-              <div className='text-center mb-6 sm:mb-8'>
-                <h3 className='font-[font2] heading-responsive-md uppercase text-layer-2 mb-2 sm:mb-3'>
+              <div className='text-center mb-8 sm:mb-10 flex-shrink-0'>
+                <h3 className='font-[font2] text-xl sm:text-2xl lg:text-3xl uppercase text-layer-2 mb-4 sm:mb-6 tracking-wide'>
                   {plan.title}
                 </h3>
-                <div className='mb-3 sm:mb-4'>
-                  <span className='font-[font2] text-3xl sm:text-4xl lg:text-5xl text-[#D3FD50] glow-accent text-glow-strong'>
+                <div className='mb-4 sm:mb-6'>
+                  <span className='font-[font2] text-4xl sm:text-5xl lg:text-6xl text-[#D3FD50] glow-accent text-glow-strong leading-none block'>
                     {plan.price}
                   </span>
                 </div>
-                <p className='font-[font1] text-sm sm:text-base text-layer-1 italic'>
+                <p className='font-[font1] text-sm sm:text-base lg:text-lg text-layer-1 italic leading-relaxed'>
                   {plan.subtitle}
                 </p>
               </div>
 
               {/* Features List */}
-              <ul className='space-y-3 sm:space-y-4 mb-8 sm:mb-10 flex-1'>
+              <ul className='space-y-4 sm:space-y-5 mb-8 sm:mb-10 flex-1'>
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className='flex items-start space-x-3 sm:space-x-4'>
-                    <span className='w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-[#D3FD50] to-[#b8e03e] rounded-full flex-shrink-0 mt-2 sm:mt-2.5 micro-bounce glow-accent'></span>
-                    <span className='font-[font1] text-responsive leading-relaxed text-layer-1'>
+                  <li key={featureIndex} className='flex items-start space-x-4 sm:space-x-5'>
+                    <span className='w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-[#D3FD50] to-[#b8e03e] rounded-full flex-shrink-0 mt-1.5 micro-bounce glow-accent shadow-sm shadow-[#D3FD50]/50'></span>
+                    <span className='font-[font1] text-sm sm:text-base lg:text-lg leading-relaxed text-layer-1'>
                       {feature}
                     </span>
                   </li>
@@ -159,7 +165,7 @@ const PricingSection = () => {
               </ul>
 
               {/* CTA Button */}
-              <div className='text-center'>
+              <div className='text-center flex-shrink-0 mt-auto'>
                 <button 
                   onClick={() => {
                     const element = document.getElementById('contact')
@@ -167,7 +173,7 @@ const PricingSection = () => {
                       element.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                   }}
-                  className={`w-full btn-pill h-12 sm:h-14 font-[font2] text-base sm:text-lg ${
+                  className={`w-full btn-pill h-12 sm:h-14 lg:h-16 font-[font2] text-base sm:text-lg lg:text-xl transition-all duration-300 ${
                     plan.popular 
                       ? 'btn-primary' 
                       : 'btn-secondary'
@@ -178,7 +184,7 @@ const PricingSection = () => {
               </div>
 
               {/* Hover accent line */}
-              <div className='w-full accent-line mt-6 sm:mt-8 rounded-full glow-accent'></div>
+              <div className='w-full accent-line mt-6 sm:mt-8 rounded-full glow-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
             </div>
           ))}
         </div>
